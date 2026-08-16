@@ -21,6 +21,7 @@ import ast
 import warnings
 warnings.filterwarnings('ignore')
 import os
+from pathlib import Path
 
 # ── Page Config ─────────────────────────────────────────────
 st.set_page_config(
@@ -61,7 +62,8 @@ st.markdown("""
 # ── Load & Prepare Data ──────────────────────────────────────
 @st.cache_data
 def load_and_prepare():
-    df = pd.read_csv('movies.csv')
+    base_dir = Path(__file__).resolve().parent
+    csv_path = base_dir / "movies.csv"
 
     # Parse genres
     def parse_genres(genre_str):
