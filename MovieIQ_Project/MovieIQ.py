@@ -62,8 +62,12 @@ st.markdown("""
 # ── Load & Prepare Data ──────────────────────────────────────
 @st.cache_data
 def load_and_prepare():
+
     base_dir = Path(__file__).resolve().parent
     csv_path = base_dir / "movies.csv"
+
+    # Load CSV
+    df = pd.read_csv(csv_path)
 
     # Parse genres
     def parse_genres(genre_str):
