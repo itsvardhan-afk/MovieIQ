@@ -338,7 +338,7 @@ elif page == "📊 EDA Analysis":
         ax.set_facecolor('#1a1a2e')
         ax.boxplot([filtered[filtered['success']==1]['runtime'],
                     filtered[filtered['success']==0]['runtime']],
-                   labels=['Success', 'Failure'],
+                   tick_labels=['Success', 'Failure'],
                    patch_artist=True,
                    boxprops=dict(facecolor='#3498db', color='white'),
                    medianprops=dict(color='yellow'),
